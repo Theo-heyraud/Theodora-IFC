@@ -1,0 +1,188 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Demande de Devis - La Reunion</title>
+    <link rel="stylesheet" href="devis.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Notable&display=swap" rel="stylesheet" />
+  </head>
+  <body>
+    <header class="desktop-header container">
+      <a class="brand-tag" href="index.html" aria-label="Retour a l'accueil">
+        <img src="assets/logo-lr.png" alt="Logo LR" class="brand-logo" />
+      </a>
+      <nav class="desktop-nav" aria-label="Navigation principale">
+        <a href="about.html">QUI SOMMES NOUS ?</a>
+        <a href="services.html">SERVICES</a>
+        <a href="camera-live.html">CAMÉRA LIVE</a>
+        <a href="devis.html" aria-current="page">DEVIS</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="devis-hero reveal-section">
+        <div class="container">
+          <h1 class="devis-title">DEMANDE DE DEVIS</h1>
+          <p class="devis-hero-lead">
+            Décrivez votre projet et vos attentes. Notre équipe vous accompagne pour construire une expérience personnalisée.
+          </p>
+        </div>
+      </section>
+
+      <section class="form-section reveal-section">
+        <div class="container">
+          <form id="devis-form" class="premium-form">
+            <div class="form-block">
+              <h3>1. INFORMATIONS PERSONNELLES</h3>
+              <div class="form-grid">
+                <div class="form-group">
+                  <label for="nom">Nom</label>
+                  <input type="text" id="nom" name="nom" placeholder="Votre nom" required />
+                </div>
+                <div class="form-group">
+                  <label for="prenom">Prénom</label>
+                  <input type="text" id="prenom" name="prenom" placeholder="Votre prénom" required />
+                </div>
+                <div class="form-group">
+                  <label for="email">Email</label>
+                  <input type="email" id="email" name="email" placeholder="votre@email.com" required />
+                </div>
+                <div class="form-group">
+                  <label for="tel">Téléphone</label>
+                  <input type="tel" id="tel" name="tel" placeholder="06 00 00 00 00" required />
+                </div>
+                <div class="form-group">
+                  <label for="naissance">Date de naissance</label>
+                  <input type="date" id="naissance" name="naissance" required />
+                </div>
+              </div>
+            </div>
+
+            <div class="form-block">
+              <h3>2. COORDONNÉES</h3>
+              <div class="form-grid">
+                <div class="form-group full-width">
+                  <label for="adresse">Adresse</label>
+                  <input type="text" id="adresse" name="adresse" placeholder="Votre adresse" required />
+                </div>
+                <div class="form-group">
+                  <label for="ville">Ville</label>
+                  <input type="text" id="ville" name="ville" placeholder="Votre ville" required />
+                </div>
+                <div class="form-group">
+                  <label for="cp">Code postal</label>
+                  <input type="text" id="cp" name="cp" placeholder="75000" required />
+                </div>
+                <div class="form-group">
+                  <label for="pays">Pays</label>
+                  <input type="text" id="pays" name="pays" placeholder="France" required />
+                </div>
+              </div>
+            </div>
+
+            <div class="form-block">
+              <h3>3. PROJET / BESOINS</h3>
+              <div class="form-grid">
+                <div class="form-group">
+                  <label for="destination">Destination recherchée</label>
+                  <input type="text" id="destination" name="destination" placeholder="Ex: La Réunion" required />
+                </div>
+                <div class="form-group">
+                  <label for="dates">Dates souhaitées</label>
+                  <input type="text" id="dates" name="dates" placeholder="Ex: Juillet 2026" required />
+                </div>
+                <div class="form-group">
+                  <label for="budget">Budget estimatif</label>
+                  <input type="text" id="budget" name="budget" placeholder="Ex: 3000€" />
+                </div>
+                <div class="form-group">
+                  <label for="voyageurs">Nombre de voyageurs</label>
+                  <input type="number" id="voyageurs" name="voyageurs" min="1" value="1" required />
+                </div>
+              </div>
+              
+              <div class="form-group mt-20">
+                <label>Type de séjour recherché</label>
+                <div class="checkbox-grid">
+                  <label class="check-item"><input type="checkbox" name="type" value="aventure" /> Aventure</label>
+                  <label class="check-item"><input type="checkbox" name="type" value="detente" /> Détente</label>
+                  <label class="check-item"><input type="checkbox" name="type" value="gastronomie" /> Gastronomie</label>
+                  <label class="check-item"><input type="checkbox" name="type" value="decouverte" /> Découverte</label>
+                  <label class="check-item"><input type="checkbox" name="type" value="luxe" /> Luxe</label>
+                  <label class="check-item"><input type="checkbox" name="type" value="famille" /> Famille</label>
+                  <label class="check-item"><input type="checkbox" name="type" value="autre" /> Autre</label>
+                </div>
+              </div>
+            </div>
+
+            <div class="form-block">
+              <h3>4. ATTENTES CLIENT</h3>
+              <div class="form-group full-width">
+                <label for="attentes">Ce que vous recherchez / Vos attentes particulières</label>
+                <textarea id="attentes" name="attentes" rows="5" placeholder="Décrivez votre projet idéal, attentes, contraintes ou demandes particulières."></textarea>
+              </div>
+            </div>
+
+            <div class="form-block">
+              <h3>5. SERVICES COMPLÉMENTAIRES</h3>
+              <div class="checkbox-grid">
+                <label class="check-item"><input type="checkbox" name="services" value="hebergement" /> Hébergement</label>
+                <label class="check-item"><input type="checkbox" name="services" value="vols" /> Vols</label>
+                <label class="check-item"><input type="checkbox" name="services" value="activites" /> Activités</label>
+                <label class="check-item"><input type="checkbox" name="services" value="transferts" /> Transferts</label>
+                <label class="check-item"><input type="checkbox" name="services" value="accompagnement" /> Accompagnement personnalisé</label>
+                <label class="check-item"><input type="checkbox" name="services" value="conciergerie" /> Conciergerie</label>
+              </div>
+            </div>
+
+            <div class="form-submit">
+              <button type="submit" class="btn-submit">ENVOYER MA DEMANDE</button>
+            </div>
+          </form>
+        </div>
+      </section>
+
+      <section class="process-section reveal-section">
+        <div class="container">
+          <h2>COMMENT ÇA FONCTIONNE ?</h2>
+          <div class="timeline">
+            <div class="step">
+              <div class="step-number">1</div>
+              <h4>Envoi du devis</h4>
+              <p>Le client soumet sa demande via notre formulaire en ligne.</p>
+            </div>
+            <div class="step">
+              <div class="step-number">2</div>
+              <h4>Analyse par l’équipe</h4>
+              <p>L’équipe étudie vos besoins et vos attentes spécifiques.</p>
+            </div>
+            <div class="step">
+              <div class="step-number">3</div>
+              <h4>Prise de contact</h4>
+              <p>Un membre de l’équipe vous contacte pour affiner votre projet.</p>
+            </div>
+            <div class="step">
+              <div class="step-number">4</div>
+              <h4>Contrat personnalisé</h4>
+              <p>Après validation, un contrat sur-mesure est établi pour votre séjour.</p>
+            </div>
+          </div>
+          <div class="process-info">
+            <p>Après validation finale, vous recevez votre contrat personnalisé et les coordonnées du membre de l’équipe dédié à votre suivi.</p>
+            <p class="highlight">Un conseiller dédié prendra personnellement en charge votre dossier.</p>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container">
+        <p>REGARDEZ EN DIRECT LA VIE DE L'ILE SECTEUR PAR SECTEUR</p>
+        <div class="social">◙ ◨ ◩</div>
+      </div>
+    </footer>
+
+    <script src="devis.js"></script>
+  </body>
+</html>

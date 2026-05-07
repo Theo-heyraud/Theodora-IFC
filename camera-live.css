@@ -1,0 +1,310 @@
+:root {
+  --bg-main: #12151e;
+  --bg-soft: #1b2030;
+  --teal: #007f7a;
+  --white: #ffffff;
+  --line: rgba(255, 255, 255, 0.1);
+  --font-display: "Antigravity", "Notable", serif;
+  --font-body: "Trebuchet MS", "Segoe UI", sans-serif;
+  --transition: all 0.3s ease;
+}
+
+@font-face {
+  font-family: "Antigravity";
+  src: url("assets/antigravity.woff2") format("woff2"),
+       url("assets/antigravity.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Notable";
+  src: local("Notable"), url("https://fonts.gstatic.com/s/notable/v12/6N0S7e0E9X9q0-SH-S6k.woff2") format("woff2");
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: var(--bg-main);
+  color: var(--white);
+  font-family: var(--font-body);
+  overflow-x: hidden;
+  line-height: 1.6;
+}
+
+.container {
+  width: min(100%, 1512px);
+  margin: 0 auto;
+  padding: 0 26px;
+}
+
+/* Header & Nav */
+.desktop-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 26px;
+}
+
+.brand-tag {
+  text-decoration: none;
+  width: 78px;
+  height: 64px;
+  display: grid;
+  place-items: center;
+}
+
+.brand-logo {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+  transition: var(--transition);
+}
+
+.brand-logo:hover {
+  transform: scale(1.05);
+}
+
+.desktop-nav {
+  display: flex;
+  justify-content: center;
+  background: transparent;
+  padding: 18px 16px 26px;
+  gap: 60px;
+}
+
+.desktop-nav a {
+  text-decoration: none;
+  color: #007a74;
+  font-family: var(--font-display);
+  font-size: 16px;
+  letter-spacing: 0.22em;
+  position: relative;
+  padding-bottom: 4px;
+  transition: var(--transition);
+}
+
+.desktop-nav a::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: #007a74;
+  transition: width 0.3s ease;
+}
+
+.desktop-nav a:hover::after {
+  width: 100%;
+}
+
+.desktop-nav a[aria-current="page"] {
+  color: var(--white);
+}
+
+.desktop-nav a[aria-current="page"]::after {
+  width: 100%;
+  background-color: var(--white);
+}
+
+/* Titles */
+h1, h2, h3 {
+  font-family: var(--font-display) !important;
+  color: var(--teal);
+  margin-top: 0;
+  line-height: 1.1;
+  text-align: center;
+}
+
+/* Sections */
+section {
+  padding: 60px 0;
+}
+
+/* Hero Section */
+.camera-hero {
+  background: linear-gradient(rgba(18, 21, 30, 0.7), rgba(18, 21, 30, 0.7)), url('assets/hero-volcano.jpg') center/cover no-repeat;
+  height: 40vh;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  padding: 0;
+}
+
+.camera-title {
+  font-size: clamp(40px, 6vw, 90px);
+  margin-bottom: 15px;
+}
+
+.camera-hero-lead {
+  font-size: clamp(18px, 1.5vw, 24px);
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+/* Camera Grid */
+.camera-grid-section h2 {
+  font-size: clamp(24px, 3vw, 42px);
+  margin-bottom: 40px;
+}
+
+.cam-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 30px;
+}
+
+.cam-card {
+  background: var(--bg-soft);
+  border-radius: 20px;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  transition: var(--transition);
+}
+
+.cam-card:hover {
+  transform: translateY(-8px);
+  border-color: var(--teal);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4);
+}
+
+.cam-preview {
+  height: 240px;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.cam-preview::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.2);
+  transition: var(--transition);
+}
+
+.cam-card:hover .cam-preview::after {
+  background: rgba(0, 0, 0, 0);
+}
+
+.dot {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  width: 12px;
+  height: 12px;
+  background: #ff362f;
+  border-radius: 50%;
+  box-shadow: 0 0 10px #ff362f;
+  z-index: 2;
+}
+
+.cam-info {
+  padding: 25px;
+  text-align: center;
+}
+
+.cam-info h3 {
+  color: var(--white);
+  font-size: 1.8rem;
+  margin-bottom: 10px;
+}
+
+.cam-info p {
+  color: #aaaaaa;
+  margin-bottom: 20px;
+}
+
+.btn-live {
+  display: inline-block;
+  padding: 10px 25px;
+  background: var(--teal);
+  color: var(--white);
+  text-decoration: none;
+  font-family: var(--font-display);
+  border-radius: 50px;
+  font-size: 0.9rem;
+  transition: var(--transition);
+}
+
+.btn-live:hover {
+  background: var(--white);
+  color: var(--teal);
+  transform: scale(1.05);
+}
+
+/* Info Service */
+.info-service {
+  padding-bottom: 80px;
+}
+
+.info-box {
+  background: rgba(0, 127, 122, 0.1);
+  border: 1px solid var(--teal);
+  padding: 30px;
+  border-radius: 15px;
+  text-align: center;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.info-box p {
+  margin: 0;
+  font-size: 1.1rem;
+  color: var(--teal);
+}
+
+/* Footer */
+.site-footer {
+  background: #080f25;
+  text-align: center;
+  padding: 40px 20px;
+}
+
+.site-footer p {
+  font-family: var(--font-display);
+  margin: 0;
+}
+
+.social {
+  margin-top: 20px;
+  letter-spacing: 2px;
+}
+
+/* Animations */
+.reveal-section {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.reveal-section.reveal-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Mobile Responsive */
+@media (max-width: 900px) {
+  .cam-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .desktop-nav {
+    gap: 20px;
+    flex-wrap: wrap;
+  }
+}
